@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <span>Meme Studio</span>
+  </header>
+  
+  <main>
+    <div class="workspace">
+      <div class="editor">
+        <div class="panel">
+          <h2 class="panel-title">
+            <i class="fas fa-image"></i>
+            Image Selection
+          </h2>
+          <div class="file-input-wrapper" id="fileInputWrapper">
+            <input type="file" id="imageInput" class="file-input" accept="image/*">
+            <label for="imageInput" class="file-input-label">
+              <i class="fas fa-upload"></i>
+              <span id="fileInputLabel">Choose an image or drop it here</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="panel">
+          <h2 class="panel-title">
+            <i class="fas fa-font"></i>
+            Text Options
+          </h2>
+          <div class="input-group">
+            <label class="input-label" for="topText">Top Text</label>
+            <input type="text" id="topText" class="text-input" placeholder="Add top text...">
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="bottomText">Bottom Text</label>
+            <input type="text" id="bottomText" class="text-input" placeholder="Add bottom text...">
+          </div>
+          
+          <div class="advanced-options">
+            <button class="toggle-options" id="toggleOptions">
+              <i class="fas fa-sliders-h"></i>
+              Advanced options
+            </button>
+            
+            <div class="options-panel" id="optionsPanel">
+              <div class="options-grid">
+                <div class="color-input-group">
+                  <label class="input-label" for="textColor">Text Color</label>
+                  <div class="color-preview">
+                    <input type="color" id="textColor" value="#ffffff">
+                  </div>
+                </div>
+                
+                <div class="color-input-group">
+                  <label class="input-label" for="strokeColor">Stroke Color</label>
+                  <div class="color-preview">
+                    <input type="color" id="strokeColor" value="#000000">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="range-input-group">
+                <div class="range-input-header">
+                  <label class="input-label" for="fontSize">Font Size</label>
+                  <span class="range-value" id="fontSizeValue">48px</span>
+                </div>
+                <input type="range" id="fontSize" min="20" max="80" value="48">
+              </div>
+              
+              <div class="range-input-group">
+                <div class="range-input-header">
+                  <label class="input-label" for="strokeWidth">Stroke Width</label>
+                  <span class="range-value" id="strokeWidthValue">4px</span>
+                </div>
+                <input type="range" id="strokeWidth" min="0" max="10" value="4">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="canvas-wrapper">
+        <div class="canvas-container">
+          <canvas id="memeCanvas" width="500" height="500"></canvas>
+        </div>
+        
+        <div class="button-group">
+          <button class="button button-primary" id="generateBtn">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            Generate Meme
+          </button>
+          <button class="button button-secondary" id="downloadBtn">
+            <i class="fas fa-download"></i>
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
